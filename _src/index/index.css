@@ -1,0 +1,67 @@
+/* CONTEUDO DENTRO DA PAGINA */
+body{
+    width: 100%;
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+
+.main-content{
+    width: 100%;
+}
+
+.header{
+    height: 10vh;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.fullsize{
+    height: 90vh;
+}
+
+#side-menu{
+    /* border: 1px solid rgba(0, 0, 0, 1); */
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.border{
+    border: 1px solid rgba(0, 0, 0, 1);
+}
+
+.selecionado{
+    background-color: #aff7ff;
+}
+
+/*  */
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+}
+
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}

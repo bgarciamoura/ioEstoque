@@ -1,0 +1,9 @@
+{"id":2,"nome":"Caneta","quantidade":250,"valor":1.5,"_id":"5D36nP9p0PQdEX2r"}
+{"id":3,"nome":"Apontador","quantidade":10,"valor":0.5,"_id":"7YobxsMgD8JZ3AhX"}
+{"id":1,"nome":"Tenis","quantidade":12,"valor":125.5,"_id":"CAs6d8XA7BWcLjT1"}
+{"$$deleted":true,"_id":"5D36nP9p0PQdEX2r"}
+{"$$deleted":true,"_id":"7YobxsMgD8JZ3AhX"}
+{"$$deleted":true,"_id":"CAs6d8XA7BWcLjT1"}
+{"id":1,"nome":"Tenis","quantidade":12,"valor":125.5,"_id":"36GHmsGOqJck0wZk"}
+{"id":2,"nome":"Caneta","quantidade":250,"valor":1.5,"_id":"a4NqdmVS76lD1ffs"}
+{"id":3,"nome":"Apontador","quantidade":10,"valor":0.5,"_id":"KV1ibg3ipMD85S1y"}

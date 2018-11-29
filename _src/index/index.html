@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>IOSystem - Estoque - Página Inicial</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <!-- IMPORTAR JQUERY PARA USO NO SISTEMA -->
+        <script>window.$ = window.jQuery = require('jquery');</script>
+
+        <!-- SCRIPTS  -->
+        <script src="../../node_modules/jquery-mask-plugin/dist/jquery.mask.min.js"></script>
+        <script>
+            class Produto {
+                constructor(_id, _nome, _quantidade, _valor) {
+                    this.id = _id
+                    this.nome = _nome
+                    this.quantidade = _quantidade
+                    this.valor = _valor
+                }
+                get getNome() {
+                    return this.nome
+                }
+                set setNome(_nome) {
+                    this.nome = _nome
+                }
+                get getQuantidade() {
+                    return this.quantidade
+                }
+                set setQuantidade(_quantidade) {
+                    this.quantidade = _quantidade
+                }
+                get getValor() {
+                    return this.valor
+                }
+                set setValor(_valor) {
+                    this.valor = _valor
+                }
+
+            }
+            var prod = new Produto(1, 'BRUNO', 12, 250)
+            console.log(prod.getNome)
+        </script>
+
+        <!-- MEU CSS -->
+        <link rel="stylesheet" href="index.css">
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <!-- BARRA SUPERIOR DO SISTEMA -->
+        <nav class="navbar navbar-dark bg-dark header navbar-expand-lg">
+            <a href="#" class="navbar-brand ml-0">
+                <img src="../../_assets/_icons/garagem-aberta_48.png" alt="" class="d-inline-block align-top">
+            </a>
+            <span class="h3 p-4 text-white-50">IOSystem - Estoque</span>
+        </nav>
+        <!-- /BARRA SUPERIOR DO SISTEMA -->
+
+        <!-- CONTEUDO PRINCIPAL DA PAGINA -->
+        <div class="wrapper">
+            
+            <!-- MENU LATERAL -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Menu</h3>
+                </div>
+                <div class="list-group p-2" role="tablist">
+                    <a href="#movimentos" class="list-group-item list-group-item-action active" id="item-movimentos" data-toggle="list" role="tab" aria-controls="movimentos">Movimentações</a>
+                    <a href="#produtos" class="list-group-item list-group-item-action" id="item-produtos" data-toggle="list" role="tab" aria-controls="produtos">Produtos</a>
+                </div>
+            </nav>
+            <!-- /MENU LATERAL -->
+            
+            <!-- CONTEUDO -->
+            <div id="main-content" class="container-fluid">
+                <nav class="navbar navbar-expand-lg navbar-light p-0 mt-2">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">Menu</button>
+                    </div>
+                </nav>
+                <div class="tab-content" id="content">
+                    
+                    <!-- TELA DE MOVIMENTAÇÕES -->
+                    <div class="tab-pane fade show active" id="movimentos" aria-label="item-movimentos">
+                        <div class="container-fluid align-content-center">
+                            
+                            <!-- HEADER DOS MOVIMENTOS -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <p class="h3 text-center">
+                                        Movimentações
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /HEADER DOS MOVIMENTOS -->
+
+                            <!-- FORM -->
+                            <div class="container-fluid p-2" style="border: 1px solid rgba(0, 0, 0, 0.123);">
+                                <form action="">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="selTipoMov">Tipo de Movimento</label>
+                                            <select id="selTipoMov" class="form-control">
+                                                <option selected value="E">Entrada</option>
+                                                <option value="S">Saída</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="txtAddNome">Nome do produto</label>
+                                            <input type="text" class="form-control" id="txtAddNome">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="qtdAddProduto">Quantidade</label>
+                                            <input type="number" class="form-control" min="1" id="qtdAddProduto">
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            <label for="txtAddValor" class="">Valor</label>
+                                            <input type="text" class="form-control dinheiro" id="txtAddValor">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                                <button class="btn btn-block btn-info mb-5" id="btnAddProduto">Adicionar</button>
+                                <table class="table" id="tblAddProdutos">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Quantidade</th>
+                                            <th scope="col">Valor</th>
+                                            <th scope="col" colspan="2">Ações</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            
+                            <!-- /FORM -->
+
+                            <!-- BOTÕES -->
+                            <div class="row">
+                                <div class="col-sm-12 p-1 mt-5">
+                                    <button class="btn btn-success btn-block">Salvar</button>
+                                </div>
+                            </div>
+                            <!-- /BOTÕES -->
+
+                        </div>
+                        
+                    </div>
+                    <!-- /TELA DE MOVIMENTAÇÕES -->
+
+                    <!-- TELA DE PRODUTOS -->
+                    <div class="tab-pane fade" id="produtos" aria-label="item-produtos">
+                        
+                        <div class="container-fluid align-content-center">
+                            
+                            <!-- HEADER DA TABELA -->
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    
+                                    <p class="h3 text-center">
+                                        Produtos
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            <!-- /HEADER DA TABELA -->
+
+                            <!-- TABELA -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="table-responsive-sm ">
+                                        <table class="table table-hover border " id="tblProdutos">
+                                            <thead class="thead-dark">
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">Nome</th>
+                                                    <th scope="col">Quantidade</th>
+                                                    <th scope="col">Valor</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Caneta</td>
+                                                    <td>20</td>
+                                                    <td>R$ 1,50</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Lápis</td>
+                                                    <td>25</td>
+                                                    <td>R$ 0,80</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Borracha</td>
+                                                    <td>55</td>
+                                                    <td>R$ 0,50</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">4</th>
+                                                    <td>Apontador</td>
+                                                    <td>150</td>
+                                                    <td>R$ 1,75</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">5</th>
+                                                    <td>Caderno</td>
+                                                    <td>100</td>
+                                                    <td>R$ 10,50</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">6</th>
+                                                    <td>Sulfite</td>
+                                                    <td>55</td>
+                                                    <td>R$ 15,00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">7</th>
+                                                    <td>Guache</td>
+                                                    <td>10</td>
+                                                    <td>R$ 7,75</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">8</th>
+                                                    <td><script>document.write(prod.getNome)</script></td>
+                                                    <td><script>document.write(prod.getQuantidade)</script></td>
+                                                    <td>R$ <script>document.write(prod.getValor)</script></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /TABELA -->
+
+                            <!-- BOTÕES -->
+                            <div class="row">
+                                <div class="col-sm-4 mt-sm-2">
+                                    <button class="btn btn-primary btn-block" data-toggle="modal" data-target="#mdlCadastro">
+                                        Cadastrar
+                                    </button>
+                                </div>
+                                <div class="col-sm-4 mt-sm-2">
+                                    <button class="btn btn-info btn-block" id="btnAlterar" data-toggle="modal" data-target="#mdlAlterar">
+                                        Alterar
+                                    </button>
+                                </div>
+                                <div class="col-sm-4 mt-sm-2">
+                                    <button class="btn btn-danger btn-block" id="btnRemover">
+                                        Remover
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /BOTÕES -->
+                        </div>
+                    </div>
+                    <!-- /TELA DE PRODUTOS -->
+
+                </div>
+                
+            </div>
+            <!-- /CONTEUDO -->
+        </div>
+        <!-- /CONTEUDO PRINCIPAL DA PAGINA -->
+
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="mdlCadastro" tabindex="-1" role="dialog" aria-labelledby="modalCadastro" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cadastro de Produto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form action="post" id="frmCadastrar">
+                                        <div class="form-group">
+                                            <label for="txtNomeProduto">Produto</label>
+                                            <input type="text" class="form-control" id="txtNomeProduto" placeholder="Informe o nome do produto..." name="nomeProduto">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="qtdProduto">Quantidade</label>
+                                            <input type="number" class="form-control" id="qtdProduto" placeholder="Informe a quantidade do produto..." min="1" name="quantidadeProduto">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtValorProduto">Preço</label>
+                                            <input type="text" class="form-control dinheiro" id="txtValorProduto" placeholder="Informe o preço do produto..." name="valorProduto">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Alteração -->
+        <div class="modal fade" id="mdlAlterar" tabindex="-1" role="dialog" aria-labelledby="modalAlteração" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Alteração de Produto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form action="post" >
+                                        <div class="form-group">
+                                            <label for="txtNomeProduto">Produto</label>
+                                            <input type="text" class="form-control" id="txtNomeProdutoAlt" placeholder="Informe o nome do produto..." name="nomeProduto">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="qtdProduto">Quantidade</label>
+                                            <input type="number" class="form-control" id="qtdProdutoAlt" placeholder="Informe a quantidade do produto..." min="1" name="quantidadeProduto">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="txtValorProduto">Preço</label>
+                                            <input type="text" class="form-control dinheiro" id="txtValorProdutoAlt" placeholder="Informe o preço do produto..." name="valorProduto">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" id="btnSalvarAlt">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="../../node_modules/popper.js/dist/popper.min.js"></script>
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="index.js"></script>
+
+        <!--MEUS SCRIPTS-->
+        <script>
+            
+        </script>
+    </body>
+</html>

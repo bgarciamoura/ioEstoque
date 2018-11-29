@@ -1,0 +1,24 @@
+{
+  "name": "ioEstoque",
+  "version": "0.0.1",
+  "description": "Testes usando o framework Electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "electron-packager . --platform=win32 --arch=all --overwrite"
+  },
+  "author": "Bruno Garcia Moura",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^2.0.8",
+    "electron-packager": "^12.1.2"
+  },
+  "dependencies": {
+    "bootstrap": "^4.1.3",
+    "jquery": "^3.3.1",
+    "jquery-mask-plugin": "^1.14.15",
+    "nedb": "^1.8.0",
+    "popper.js": "^1.14.4"
+  }
+}
